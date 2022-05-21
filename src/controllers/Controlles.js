@@ -20,6 +20,7 @@ class Controller{
         try{
             const { product_name, product_price } = req.body;
             const psql = await req.psql;
+            console.log(true)
             let product = await psql.products.findOne({
                 where: {
                     product_name,
@@ -91,7 +92,7 @@ class Controller{
             const psql = await req.psql;
             let { product_name, new_name } =req.body;
 
-            let prioduct = await psql.products.findOne({
+            let product = await psql.products.findOne({
                 where:{
                     product_name,
                 }
